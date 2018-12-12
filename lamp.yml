@@ -1,0 +1,24 @@
+---
+
+- name: Deploy lamp
+  hosts: all
+  roles:
+  - name: apache
+    tags:
+    - deploy
+    - apache
+  
+  - name: mysql
+    tags:
+    - deploy
+    - mysql
+  
+  - name: nginx
+    tags:
+    - deploy
+    - nginx
+ 
+  - name: php
+    tags:
+    - deploy
+    - php

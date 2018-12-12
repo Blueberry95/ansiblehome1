@@ -1,0 +1,7 @@
+---
+
+- name: Install PHP CLI
+      become: true
+      apt:
+        name: php5-cli
+        state: present
