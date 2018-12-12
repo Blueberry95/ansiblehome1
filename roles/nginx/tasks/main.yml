@@ -1,5 +1,10 @@
 ---
 
+- name: Stop service apache2, if started
+  service:
+    name: apache2
+    state: stopped
+
 - name: Install nginx
   apt:
     name: nginx
