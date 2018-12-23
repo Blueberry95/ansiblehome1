@@ -10,7 +10,7 @@
 - name: update mysql root password for all root accounts
   sudo: yes
   mysql_user: 
-    name: root 
+    name: "{{ mysql_user }}"
     host: "{{ item }}" 
     password: "{{ mysql_root_password }}"
     check_implicit_admin: yes
@@ -21,7 +21,13 @@
     - ::1
     - localhost 
 
+- template:
+    src: my.cnf.j2
+    dest: /root/.my.cnf
+    mode: 0600
+
 - name: remove default database 
-  mssql_db:
+  mysql_db:
     name: test
     state: absent
+   # login_unix_socket: /var/run/mysqld/mysqld.sock 

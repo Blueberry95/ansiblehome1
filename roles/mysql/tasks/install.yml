@@ -8,3 +8,7 @@
   with_items:
   - python-mysqldb
   - mysql-server
+  - python-pip
+
+- pip:
+    name: pymssql

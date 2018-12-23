@@ -1,7 +1,8 @@
 ---
 
 - name: Deploy lamp
-  hosts: all
+  hosts: localhost
+  become: yes
   roles:
   - name: apache
     tags:
