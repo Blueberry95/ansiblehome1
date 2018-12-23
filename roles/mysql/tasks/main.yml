@@ -1,10 +1,5 @@
 ---
 
-- name: Install MySQL
-  apt: 
-    name: "{{ item }}"
-    update_cache: yes 
-    state: present
-  with_items:
-  - python-mysqldb
-  - mysql-server
+- include: install.yml
+
+- include: configure.yml
